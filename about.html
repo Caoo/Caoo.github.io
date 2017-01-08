@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黄埔珠江</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/style/common.css">
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+
+    <style>
+        .sidebar ul{
+            text-align: center;
+        }
+        .sidebar li{
+            display: inline-block;
+            width:100px;
+            margin:1px;
+            height: 110px;
+        }
+        .sidebar li{
+            background:blue;
+            color:#fff;
+        }
+        .sidebar span{
+            display: block;
+            font-size:1.5em;
+            margin-bottom:.3em;
+        }
+        .sidebar a{
+            display: block;
+            padding:2em 1em;
+            height:100%;
+            background: #aaa;
+            transition:all .5s ease;
+        }
+        .current-sidebar a,
+        .sidebar a:hover{
+            color:#fff;
+            background: #184086;
+        }
+        .atical-p{
+            line-height: 32px;
+            font-size: 16px;
+            text-indent:2em;
+            margin-bottom:2em;
+        }
+        .margin-top-2em{
+            margin-top:2em;
+        }
+
+        .abt-banner{
+            background-image:url(http://www.yuelan-gd.com/img/20161209/20161209_232048_965.jpg);
+        }
+    </style>
+
+</head>
+<body>
+
+    <header class="header">
+        <nav class="container nav-line">
+            <div class="logo pull-left">
+
+            </div>
+        <ul class="nav-link pull-right clearfix">
+            <li><a  href="./index.html">首页</a></li>
+            <li><a class="current" href="./about.html">关于我们</a></li>
+            <li><a href="./product.html">产品展示</a></li>
+            <li><a href="./contact.html">联系我们</a></li>
+            <li><a href="./job.html">精英招聘</a></li>
+        </ul>
+            <div class="menu pull-right">
+                <div class="demo-btn">
+                    <div class="btn-top"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-bottom"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="banner">
+        <div class="banner-inner-2 abt-banner">
+        </div>
+    </div>
+
+    <div class="container margin-top-2em">
+		<nav class="sidebar hidden-xs">
+            <ul class="text-center">
+                <li class="current-sidebar"><a href="./about.html" > <span class="glyphicon glyphicon-home"></span>企业简介</a></li>
+                <li><a href="./about-cultural.html"><span class="glyphicon glyphicon-book"></span>企业简介</a></li>
+                <li><a href="./about-team.html"><span class="glyphicon glyphicon-tower"></span>企业简介</a></li>
+                <li><a href="./about-power.html"><span class="glyphicon glyphicon-thumbs-up"></span>企业简介</a></li>
+                <li><a href="./about-resource.html"><span class="glyphicon glyphicon-briefcase"></span>企业简介</a></li>
+            </ul>
+		</nav>
+        <nav>
+            <select id="select" class="visible-xs-block hidden form-control">
+                <option value="./about.html">企业简介</option>
+                <option value="./about-cultural.html">企业文化</option>
+                <option value="./about-team.html">企业团队</option>
+<!--                 <option value="./about-power.html">生产实力</option>
+                <option value="./about-resource.html">企业资源</option> -->
+            </select>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h3 class="margin-top-1em"><strong class="text-danger">现代化综合性电缆电线集团</strong></h3>
+        <div class="col-xs-12 col-sm-9 pull-right">
+            <img src="public/images/com.jpg" width="100%" alt="">
+        </div>
+        <p class="atical-p">广东粤缆电线电缆有限公司创立于2000年，是一家集电线电缆、原材料研发、生产、销售于一体的现代化企业。公司位于广州市天河区，拥有数万平方米的工业园，地理位置优越，交通便捷。是我国从事电线电缆研发、生产最前端的企业之一。</p>
+        <p class="atical-p">广东粤缆电线电缆有限公司创立于2000年，是一家集电线电缆、原材料研发、生产、销售于一体的现代化企业。公司位于广州市天河区，拥有数万平方米的工业园，地理位置优越，交通便捷。是我国从事电线电缆研发、生产最前端的企业之一。</p>
+        <p class="atical-p">广东粤缆电线电缆有限公司创立于2000年，是一家集电线电缆、原材料研发、生产、销售于一体的现代化企业。公司位于广州市天河区，拥有数万平方米的工业园，地理位置优越，交通便捷。是我国从事电线电缆研发、生产最前端的企业之一。</p>
+        <p class="atical-p">广东粤缆电线电缆有限公司创立于2000年，是一家集电线电缆、原材料研发、生产、销售于一体的现代化企业。公司位于广州市天河区，拥有数万平方米的工业园，地理位置优越，交通便捷。是我国从事电线电缆研发、生产最前端的企业之一。</p>
+    </div>
+
+    <footer class="container-fluid footer">
+        <div class="container">
+        <div class="col-sm-6 footer-articel">
+            <h3>地址</h3>
+            <h4>广州黄埔珠江电线厂</h4>
+            <h4>广州市天河区珠吉路大淋岗工业区Y栋</h4>
+            <p>粤缆工业园 510000</p>
+            <p>T_+86 20 8607 1505</p>
+            <p>F_+86 20 3626 1200</p>
+        </div>
+        <div class="col-sm-6 footer-map">
+        </div>
+        </div>
+    </footer>
+
+
+    <script>
+        $('.demo-btn').click(function(){
+            $(this).hasClass('close') && $(this).removeClass('close') || $(this).addClass('close');
+            $('.nav-link').hasClass('none') && $('.nav-link').removeClass('none') || $('.nav-link').addClass('none');
+        })
+        $('#select').on('change',function(e){
+            console.log(e.target.value);
+            location.href=e.target.value;
+        })
+    </script>
+</body>
+</html>

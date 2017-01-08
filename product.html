@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黄埔珠江</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/style/common.css">
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="public/js/vue.js"></script>
+	<script src="public/js/vue-router.js"></script>
+
+	<style>
+		.sidebar ul{
+			text-align: center;
+		}
+		.sidebar li{
+			display: inline-block;
+			width:100px;
+			margin:1px;
+			height: 110px;
+		}
+		.sidebar li{
+			background:blue;
+			color:#fff;
+		}
+		.sidebar span{
+			display: block;
+			font-size:1.5em;
+			margin-bottom:.3em;
+		}
+		.sidebar a{
+			display: block;
+			padding:2em 0;
+			height:100%;
+			background: #aaa;
+			transition:all .5s ease;
+		}
+
+		a.v-link-active,
+		.sidebar a:hover{
+			color:#fff;
+			background: #184086;
+		}
+		.atical-p{
+			line-height: 32px;
+			font-size: 16px;
+			text-indent:2em;
+			margin-bottom:1em;
+		}
+		.margin-top-2em{
+			margin-top:2em;
+		}
+    	.product-banner{
+    		background-image:url(http://www.yuelan-gd.com/img/20161209/20161209_221047_917.jpg);
+    	}
+	</style>
+
+</head>
+<body>
+
+    <header class="header">
+        <nav class="container nav-line">
+            <div class="logo pull-left">
+
+	        </div>
+	        <ul class="nav-link pull-right clearfix">
+	            <li><a  href="./index.html">首页</a></li>
+	            <li><a  href="./about.html">关于我们</a></li>
+	            <li><a class="current" href="./product.html">产品展示</a></li>
+	            <li><a href="./contact.html">联系我们</a></li>
+	            <li><a href="./job.html">精英招聘</a></li>
+	        </ul>
+            <div class="menu pull-right">
+                <div class="demo-btn">
+                    <div class="btn-top"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-bottom"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <div class="banner-inner-2 product-banner">
+        </div>
+    </div>
+
+
+
+	<div id="app">
+		<nav class="sidebar hidden-xs margin-top-2em">
+			<ul class="text-center">
+				<li><a v-link="{path:'/dianxian'}"> <span class="glyphicon glyphicon-home"></span>电线</a></li>
+				<li><a v-link="{path:'/gaoya'}"><span class="glyphicon glyphicon-book"></span>中高压电缆</a></li>
+				<li><a v-link="{path:'/diya'}"><span class="glyphicon glyphicon-tower"></span>低压电缆</a></li>
+				<li><a v-link="{path:'/fenzhi'}"><span class="glyphicon glyphicon-thumbs-up"></span>分支电缆</a></li>
+				<li><a v-link="{path:'/kongzhi'}"><span class="glyphicon glyphicon-briefcase"></span>控制及信号电缆</a></li>
+				<li><a v-link="{path:'/jiakong'}"><span class="glyphicon glyphicon-briefcase"></span>架空电缆</a></li>
+				<li><a v-link="{path:'/jueyuan'}"><span class="glyphicon glyphicon-briefcase"></span>矿物绝缘电缆</a></li>
+				<li><a v-link="{path:'/luhejing'}"><span class="glyphicon glyphicon-briefcase"></span>铝合金电缆</a></li>
+			</ul>
+		</nav>
+		<nav style="padding:2em 2em 0;">
+	        <select id="nav-select" class="visible-xs-block hidden form-control">
+	            <option value="/dianxian">电线</option>
+	            <option value="/gaoya">中高压电缆</option>
+	            <option value="/diya">低压电缆</option>
+	            <option value="/fenzhi">分支电缆</option>
+	            <option value="/kongzhi">控制及信号电缆</option>
+	            <option value="/jiakong">架空电缆</option>
+	            <option value="/jueyuan">矿物绝缘电缆</option>
+	            <option value="/luhejing">铝合金电缆</option>
+	        </select>
+	    </nav>
+		<router-view></router-view>
+
+
+	</div>
+
+	<template id="productContainer">
+		<div class="container h3 margin-top-2em">
+			<strong class="text-danger ">{{productTitle}}</strong>
+			<p style="line-height: 32px;font-size: 16px;color: #595757;margin-bottom:2em">{{productProfile}}</p>
+
+			<div class="col-sm-4" style="height:441px" v-for="(index , product ) in products" v-if="product.type === $route.name || $route.path === '/home'">
+				<a v-link="{path:product.type + '/' + index }">
+					<img width="100%" :src="product.imgurl" alt="" >
+				</a>
+				<p style="height: 84px;line-height: 28px;padding: 12px 20px 5px;
+font-size: 16px;color: #595757;" class="text-center">
+					{{product.name}}
+				</p>
+			</div>
+		</div>
+	</template>
+
+	<template id="detail">
+		<div class="container margin-top-2em" >
+			<div class="col-sm-5 col-xs-12">
+				<img :src="product.imgurl" width="100%"  alt="">
+			</div>
+			<div class="col-sm-7 col-xs-12">
+				<h3 >{{product.name}}</h3>
+				<p>产品规格：{{product.name}}</p>
+				<p>产品规格：{{product.name}}</p>
+			</div>
+		</div>
+	</template>
+
+	<footer class="container-fluid footer">
+		<div class="container">
+        <div class="col-sm-6 footer-articel">
+            <h3>地址</h3>
+            <h4>广州黄埔珠江电线厂</h4>
+            <h4>广州市天河区珠吉路大淋岗工业区Y栋</h4>
+            <p>粤缆工业园 510000</p>
+            <p>T_+86 20 8607 1505</p>
+            <p>F_+86 20 3626 1200</p>
+        </div>
+        <div class="col-sm-6 footer-map">
+        </div>
+        </div>
+    </footer>
+
+
+    <script>
+        $('.demo-btn').click(function(){
+            $(this).hasClass('close') && $(this).removeClass('close') || $(this).addClass('close');
+            $('.nav-link').hasClass('none') && $('.nav-link').removeClass('none') || $('.nav-link').addClass('none');
+        })
+
+        $('#nav-select').on('change',function(e){
+        	console.log(e.target.value);
+        	location.hash = '#'+ e.target.value;
+        })
+
+
+		var data = [{
+			imgurl: './public/images/product4.jpg',
+			name: '测试产品电缆dianxian',
+			type: 'dianxian',
+			detail:'YTTW 0.6/1KV 3x95+1x50',
+			regular: 'JG/T313-2014',
+			phone:'4008-322-002',
+			descp: '文本文本'
+		},{
+			imgurl: './public/images/product4.jpg',
+			name: '测试产品电缆gaoya',
+			type: 'gaoya',
+			detail:'YTTW 0.6/1KV 3x95+1x50',
+			regular: 'JG/T313-2014',
+			phone:'4008-322-002',
+			descp: '文本文本'
+		},{
+			imgurl: './public/images/product4.jpg',
+			name: '测试产品电缆diya',
+			type: 'diya',
+			detail:'YTTW 0.6/1KV 3x95+1x50',
+			regular: 'JG/T313-2014',
+			phone:'4008-322-002',
+			descp: '文本文本'
+		},{
+			imgurl: './public/images/product4.jpg',
+			name: '测试产品电缆jueyuan',
+			type: 'jueyuan',
+			detail:'YTTW 0.6/1KV 3x95+1x50',
+			regular: 'JG/T313-2014',
+			phone:'4008-322-002',
+			descp: '文本文本'
+		},{
+			imgurl: './public/images/product4.jpg',
+			name: '测试产品电缆jiakong',
+			type: 'jiakong',
+			detail:'YTTW 0.6/1KV 3x95+1x50',
+			regular: 'JG/T313-2014',
+			phone:'4008-322-002',
+			descp: '文本文本'
+		},{
+			imgurl: './public/images/product4.jpg',
+			name: '测试产品电缆fenzhi',
+			type: 'fenzhi',
+			detail:'YTTW 0.6/1KV 3x95+1x50',
+			regular: 'JG/T313-2014',
+			phone:'4008-322-002',
+			descp: '文本文本'
+		},{
+			imgurl: './public/images/product4.jpg',
+			name: '测试产品电缆luhejing',
+			type: 'luhejing',
+			detail:'YTTW 0.6/1KV 3x95+1x50',
+			regular: 'JG/T313-2014',
+			phone:'4008-322-002',
+			descp: '文本文本'
+		},{
+			imgurl: './public/images/product4.jpg',
+			name: '测试产品电缆kongzhi',
+			type: 'kongzhi',
+			detail:'YTTW 0.6/1KV 3x95+1x50',
+			regular: 'JG/T313-2014',
+			phone:'4008-322-002',
+			descp: '文本文本'
+		}]
+
+		var Home = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '产品',
+					productProfile: '公司主要生产电线电缆、电气装备用电线电缆、高低压（交联）电力电缆、架空绝缘电缆、控制电缆、裸电线、公路车辆用低压电缆、橡皮电缆、屏蔽电缆、分支电缆、有线电视线、计算机电缆、铝绞线及铜芯铝绞线、接插件电源线、各类阻燃和耐火电线电缆及低烟无卤电线电缆、防水、防鼠防白蚁、耐油、耐高温等科技含量较高的特种电缆，规格品种齐全。公司在全国各地设有100多个销售网点，建立了完整、快捷、服务创优的销售网络。',
+					products: data
+				}
+			}
+		});
+
+		var dianxian = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '电线产品',
+					productProfile: '产品简介',
+					products: data
+				}
+			}
+		});
+		var diya = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '低压电线产品',
+					productProfile: '产品简介',
+					products: data
+				}
+			}
+		});
+		var gaoya = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '中高压电线产品',
+					productProfile: '产品简介',
+					products: data
+				}
+			}
+		});
+		var jueyuan = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '绝缘产品',
+					productProfile: '产品简介',
+					products: data
+				}
+			}
+		});
+		var jiakong = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '架空产品',
+					productProfile: '产品简介',
+					products: data
+				}
+			}
+		});
+		var luhejing = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '铝合金产品',
+					productProfile: '产品简介',
+					products: data
+				}
+			}
+		});
+		var kongzhi = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '产品',
+					productProfile: '产品简介',
+					products: data
+				}
+			}
+		});
+		var fenzhi = Vue.extend({
+			template: '#productContainer',
+			data: function() {
+				return {
+					productTitle : '产品',
+					productProfile: '产品简介',
+					products: data
+				}
+			}
+		});
+
+
+		var detail = Vue.extend({
+			template: '#detail',
+			data: function() {
+				return {
+					product:data[this.$route.params.index]
+				}
+			}
+		})
+
+		/* 创建路由器  */
+		var router = new VueRouter();
+
+		/* 创建路由映射  */
+		router.map({
+			'/home': {
+				component: Home
+			},
+			'/dianxian' : {
+				component: dianxian,
+				name : 'dianxian'
+			},
+			'/gaoya':{
+				component: gaoya,
+				name : 'gaoya'
+			},
+			'/diya':{
+				component: diya,
+				name:'diya'
+			},
+			'/fenzhi':{
+				component: fenzhi,
+				name:'fenzhi'
+			},
+			'/kongzhi':{
+				component: kongzhi,
+				name:'kongzhi'
+			},
+			'/jiakong':{
+				component: jiakong,
+				name:'jiakong'
+			},
+			'/jueyuan':{
+				component: jueyuan,
+				name:'jueyuan'
+			},
+			'/luhejing':{
+				component: luhejing,
+				name:'luhejing'
+			},
+			'/:producttype/:index' : {
+				component:	detail,
+				name:'detail'
+			}
+		});
+
+		router.redirect({
+			'/': '/home'
+		})
+		/* 启动路由  */
+		var App = Vue.extend({})
+		router.start(App, '#app')
+
+    </script>
+</body>
+</html>

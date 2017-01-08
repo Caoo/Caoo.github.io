@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黄埔珠江</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/style/common.css">
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+
+    <style>
+        .sidebar ul{
+            text-align: center;
+        }
+        .sidebar li{
+            display: inline-block;
+            width:100px;
+            margin:1px;
+            height: 110px;
+        }
+        .sidebar li{
+            background:blue;
+            color:#fff;
+        }
+        .sidebar span{
+            display: block;
+            font-size:1.5em;
+            margin-bottom:.3em;
+        }
+        .sidebar a{
+            display: block;
+            padding:2em 1em;
+            height:100%;
+            background: #aaa;
+            transition:all .5s ease;
+        }
+        .current-sidebar a,
+        .sidebar a:hover{
+            color:#fff;
+            background: #184086;
+        }
+        .atical-p{
+            line-height: 32px;
+            font-size: 16px;
+            text-indent:2em;
+            margin-bottom:1em;
+        }
+        .margin-top-2em{
+            margin-top:2em;
+        }
+        .cultrue-item{
+            padding:0 2em;
+            margin-top:2em;
+        }
+        .cultrue-item-p{
+            line-height: 32px;
+            padding: 33px 36px 0;
+            font-size: 16px;
+            text-align: center;
+            color: #585757;
+        }
+                .abt-banner{
+            background-image:url(http://www.yuelan-gd.com/img/20161209/20161209_232048_965.jpg);
+        }
+    </style>
+
+</head>
+<body>
+
+<header class="header">
+    <nav class="container nav-line">
+        <div class="logo pull-left">
+
+        </div>
+        <ul class="nav-link pull-right clearfix">
+            <li><a  href="./index.html">首页</a></li>
+            <li><a class="current" href="./about.html">关于我们</a></li>
+            <li><a href="./product.html">产品展示</a></li>
+            <li><a href="./contact.html">联系我们</a></li>
+            <li><a href="./job.html">精英招聘</a></li>
+        </ul>
+        <div class="menu pull-right">
+            <div class="demo-btn">
+                <div class="btn-top"></div>
+                <div class="btn-middle"></div>
+                <div class="btn-bottom"></div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="banner">
+        <div class="banner-inner-2 abt-banner">
+        </div>
+    </div>
+
+<div class="container">
+    <nav class="sidebar hidden-xs">
+        <ul class="text-center">
+            <li ><a href="./about.html" > <span class="glyphicon glyphicon-home"></span>企业简介</a></li>
+            <li><a href="./about-cultural.html"><span class="glyphicon glyphicon-book"></span>企业简介</a></li>
+            <li class="current-sidebar"><a href="./about-team.html"><span class="glyphicon glyphicon-tower"></span>企业简介</a></li>
+            <li><a href="./about-power.html"><span class="glyphicon glyphicon-thumbs-up"></span>企业简介</a></li>
+            <li><a href="./about-resource.html"><span class="glyphicon glyphicon-briefcase"></span>企业简介</a></li>
+        </ul>
+
+    </nav>
+        <nav>
+            <select id="select" class="visible-xs-block hidden form-control">
+                <option value="./about.html">企业简介</option>
+                <option value="./about-cultural.html">企业文化</option>
+                <option value="./about-team.html">企业团队</option>
+<!--                 <option value="./about-power.html">生产实力</option>
+                <option value="./about-resource.html">企业资源</option> -->
+            </select>
+        </nav>
+</div>
+
+<div class="container">
+    <h3 class="margin-top-1em"><strong class="text-danger">凝聚产生力量 团结诞生希望</strong></h3>
+    <p class="atical-p">粤缆电缆上下一心，众志成城。从开始的研发到最后的投产，一直牵动着粤缆全体成员的心，积极主动的投入到这场没有硝烟的战斗中去。随着一个个目标的实现，粤缆人克服了各种艰难险阻，谱写了一个个壮丽的史诗。在面对投产过程中的各项突发事件时，更是发挥了集体的力量，团结一致，迎难而上用智慧与不懈努力，化解了一道道难题，最终赢得了业务的持续稳定与发展。</p>
+
+    <div>
+        <img src="public/images/culture5.jpg" width="100%" alt="">
+    </div>
+</div>
+
+<div>
+    <img src="" alt="">
+</div>
+
+<div class="container">
+    <h3 class="margin-top-2em"><strong class="text-danger">粤缆团队</strong></h3>
+    <div class="col-sm-4 col-xs-12 cultrue-item">
+        <div ><img src="public/images/culture6.jpg" width="100%" alt=""></div>
+        <p class="text-center cultrue-item-p">未来，在粤缆，更多年轻而有才华的员工在一起协同工作。</p>
+    </div>
+    <div class="col-sm-4 col-xs-12 cultrue-item">
+        <div ><img src="public/images/culture7.jpg" width="100%" alt=""></div>
+        <p class="text-center cultrue-item-p">未来，在粤缆，更多年轻而有才华的员工在一起协同工作。</p>
+    </div>
+    <div class="col-sm-4 col-xs-12 cultrue-item">
+        <div ><img src="public/images/culture8.jpg" width="100%" alt=""></div>
+        <p class="text-center cultrue-item-p">未来，在粤缆，更多年轻而有才华的员工在一起协同工作。</p>
+    </div>
+</div>
+
+
+<footer class="container-fluid footer">
+    <div class="container">
+    <div class="col-sm-6 footer-articel">
+        <h3>地址</h3>
+        <h4>广州黄埔珠江电线厂</h4>
+        <h4>广州市天河区珠吉路大淋岗工业区Y栋</h4>
+        <p>粤缆工业园 510000</p>
+        <p>T_+86 20 8607 1505</p>
+        <p>F_+86 20 3626 1200</p>
+    </div>
+    <div class="col-sm-6 footer-map">
+    </div>
+    </div>
+</footer>
+
+
+<script>
+    $('.demo-btn').click(function(){
+        $(this).hasClass('close') && $(this).removeClass('close') || $(this).addClass('close');
+        $('.nav-link').hasClass('none') && $('.nav-link').removeClass('none') || $('.nav-link').addClass('none');
+    })
+            $('#select').on('change',function(e){
+            console.log(e.target.value);
+            location.href=e.target.value;
+        })
+</script>
+</body>
+</html>
