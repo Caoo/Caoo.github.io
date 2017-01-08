@@ -1,8 +1,1 @@
-var runningPercentage = function(){
-	
-	var numContainer = $(this).find('.percen-num');
-	var ani = setInterval(function(){
-		num = numContainer.text();
-		num === '100' ? ( clearInterval(ani) && ( ani = null ) ): numContainer.text(++num);
-	})
-}
+var runningPercentage=function(){var n=$(this).find(".percen-num"),e=setInterval(function(){num=n.text(),"100"===num?clearInterval(e)&&(e=null):n.text(++num)})};
