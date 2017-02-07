@@ -121,19 +121,19 @@ ul{
 	line-height: 62px;
 }
 
-.nav-link a:before{
-	content: '';
-	display: block;
-	position: absolute;
-	top:25px;
-	left:0;
-	right:0;
-	height: 3px;
-	border-radius: 2px;
-	background: #184086;
-	transition: all 0.4s ease;
-	transform: rotateY(90deg);
-}
+/*.nav-link a:before{*/
+	/*content: '';*/
+	/*display: block;*/
+	/*position: absolute;*/
+	/*top:25px;*/
+	/*left:0;*/
+	/*right:0;*/
+	/*height: 3px;*/
+	/*border-radius: 2px;*/
+	/*background: #184086;*/
+	/*transition: all 0.4s ease;*/
+	/*transform: rotateY(90deg);*/
+/*}*/
 
 .nav-link .current:before,
 .nav-link a:hover:before{
